@@ -1,0 +1,7 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "lijinma/php-cli-color": "^1.0",
+        "jc21/clitable": "^1.1"
+    }
+}
