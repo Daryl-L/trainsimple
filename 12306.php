@@ -37,26 +37,29 @@
         '硬座',
         '无座',
     ];
-$body = [
-    [
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-        '1',
-    ],
-];
 
-$table = new jc21\CliTable;
+    $table = new Console_Table();
+    $table->setHeaders($header);
+    foreach ($res->data->datas as $data) {
+        $body = [
+            $data->station_train_code,
+            $data->from_station_name,
+            $data->to_station_name,
+            $data->start_time,
+            $data->arrive_time,
+            $data->lishi,
+            $data->swz_num,
+            $data->tz_num,
+            $data->zy_num,
+            $data->ze_num,
+            $data->gr_num,
+            $data->rw_num,
+            $data->yw_num,
+            $data->rz_num,
+            $data->yz_num,
+            $data->wz_num,
+        ];
+        $table->addRow($body);
+    }
+    echo $table->getTable();
 
